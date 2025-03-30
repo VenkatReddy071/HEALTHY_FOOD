@@ -11,7 +11,7 @@ export const Menu = () => {
   const [type, setType] = useState(null);
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState([]);
-  const url = "http://localhost:3000/api";
+  const url = "https://healthy-food-1.onrender.com/api";
 
   useEffect(() => {
     toast.info("Loading Data");
