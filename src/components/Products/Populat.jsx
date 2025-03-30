@@ -8,7 +8,7 @@ import Axios from "axios"
 import {Link} from "react-router-dom";
 export const Popular = () => {
   const [items,setItems]=useState([])
-  const url="http://localhost:3000/api/"
+  const url="https://healthy-food-1.onrender.com/api/"
   useEffect(()=>{
     Axios.get(url+"best")
     .then((response)=>{
