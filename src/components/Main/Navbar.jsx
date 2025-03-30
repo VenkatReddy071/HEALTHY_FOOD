@@ -20,7 +20,7 @@ export const Navbar = ({ user }) => {
     }, [add===true]);
   
     const handleCart = () => {
-      Axios.get("http://localhost:3000/api/cart", { withCredentials: true })
+      Axios.get("https://healthy-food-1.onrender.com/api/cart", { withCredentials: true })
         .then((response) => {
           console.log(response.data);
           setCart(response.data.items);
@@ -38,7 +38,7 @@ export const Navbar = ({ user }) => {
     </li>
   );
   const handleLogOut=()=>{
-    Axios.post("http://localhost:3000/api/logout")
+    Axios.post("https://healthy-food-1.onrender.com/api/logout")
     .then((response)=>{
       console.log(response.data)
     })
