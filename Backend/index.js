@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(cookieParser());
 app.use(cors({
-  origin:process.env.FRONTEND_URL,
+  origin:"https://healthy-food-1-6jd9.onrender.com",
   credentials: true,
 }));
 app.use(express.json());
