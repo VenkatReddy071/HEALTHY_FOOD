@@ -11,7 +11,7 @@ const CheckoutPage = () => {
 },[]);
     
       const handleCart = () => {
-        Axios.get("https://healthy-food-1.onrender.com/api/cart", { withCredentials: true })
+        Axios.get("http://localhost:3000/api/cart", { withCredentials: true })
           .then((response) => {
             console.log(response.data);
             setCartItems(response.data.items);
@@ -40,12 +40,13 @@ const CheckoutPage = () => {
     setLoading(true);
     toast.info("Placing your order...");
 
-    Axios.post("https://healthy-food-1.onrender.com/api/orders", {items: cartItems},{withCredentials:true})
+    Axios.post("http://localhost:3000/api/orders/order", {items: cartItems},{withCredentials:true})
       .then((response) => {
         toast.success("Order placed successfully!");
       })
       .catch((error) => {
-        toast.error(`Failed to place order: ${error.response?.data?.message || "Unknown error"}`);
+        toast.error(`Failed to place order: ${error}`);
+        console.log(error)
       })
       .finally(() => {
         setLoading(false);
