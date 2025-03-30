@@ -9,7 +9,7 @@ const UserManagement = () => {
   useEffect(() => {
     // Fetch all users from the backend
     axios
-      .get("http://localhost:3000/api/user")
+      .get("https://healthy-food-1.onrender.com/api/user")
       .then((res) => {
         setUsers(res.data);
       })
@@ -21,7 +21,7 @@ const UserManagement = () => {
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/users/${userId}`);
+      await axios.delete(`https://healthy-food-1.onrender.com/api/users/${userId}`);
       setUsers((prevUsers) =>
         prevUsers.filter((user) => user._id !== userId)
       );
