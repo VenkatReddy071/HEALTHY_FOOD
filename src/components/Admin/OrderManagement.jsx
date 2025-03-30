@@ -164,7 +164,7 @@ const OrderManagement = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/orders/get")
+      .get("https://healthy-food-1.onrender.com/api/orders/get")
       .then((res) => {
         setOrders(res.data.data);
       })
@@ -176,7 +176,7 @@ const OrderManagement = () => {
 
   const deleteOrder = async (orderId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/orders/${orderId}`);
+      await axios.delete(`https://healthy-food-1.onrender.com/api/orders/${orderId}`);
       setOrders((prevOrders) =>
         prevOrders.filter((order) => order._id !== orderId)
       );
@@ -196,7 +196,7 @@ const OrderManagement = () => {
   const handleEdit = async () => {
     try {
       const updatedOrder = await axios.post(
-        `http://localhost:3000/api/orders/${editingOrder._id}/status`,
+        `https://healthy-food-1.onrender.com/api/orders/${editingOrder._id}/status`,
         { status }
       );
       setOrders((prevOrders) =>
