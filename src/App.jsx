@@ -37,7 +37,7 @@ const AppContent = ({ user }) => {
 
 const App = () => {
   const [user, setUser] = useState(null);
-  const url = "http://localhost:3000/api/me";
+  const url = "https://healthy-food-1.onrender.com/api/me";
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({
     orders: [],
@@ -57,9 +57,9 @@ const App = () => {
     const fetchData = async () => {
       try {
         const [ordersResponse, usersResponse, productsResponse] = await Promise.all([
-          Axios.get("http://localhost:3000/api/orders"),
-          Axios.get("http://localhost:3000/api/users"),
-          Axios.get("http://localhost:3000/api/products"),
+          Axios.get("https://healthy-food-1.onrender.com/api/orders"),
+          Axios.get("https://healthy-food-1.onrender.com/api/users"),
+          Axios.get("https://healthy-food-1.onrender.com/api/products"),
         ]);
 
         setData({
