@@ -13,7 +13,7 @@ export const AddToCart = ({ setOpenCart, image, name, rating, price,id }) => {
   };
   const handleToAdd=()=>{
     toast.success("Added to Cart !")
-    Axios.post("http://localhost:3000/api/cart",{productId:id,quantity},{ withCredentials:true})
+    Axios.post("https://healthy-food-1.onrender.com/api/cart",{productId:id,quantity},{ withCredentials:true})
     .then((response)=>{
     
       console.log(response.data)
