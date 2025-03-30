@@ -8,7 +8,7 @@ import { Navbar } from "./components/Main/Navbar";
 import ServiceSection from "./components/Service/ServiceSection";
 import CheckoutPage from "./components/Cart/CheckOutPage";
 import Admin from "./components/Admin/Admin";
-
+import Axios from "axios"
 const Loader = () => (
   <div className="flex justify-center items-center h-screen bg-gray-100">
     <div className="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
