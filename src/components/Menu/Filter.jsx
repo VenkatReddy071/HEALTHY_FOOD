@@ -193,7 +193,7 @@ const FiltersModal = ({ setOpen, setItems }) => {
   const [sortOption, setSortOption] = useState("Popularity");
   const [selectedRating, setSelectedRating] = useState("Any");
 
-  const url = "http://localhost:3000/api/filter/";
+  const url = "https://healthy-food-1.onrender.com/api/filter/";
 
   const fetchFilteredItems = (endpoint, params = {}) => {
     toast.info("Fetching data, please wait...");
