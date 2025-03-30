@@ -12,17 +12,17 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     // Fetch all orders
-    axios.get("http://localhost:3000/api/orders/get").then((res) => {
+    axios.get("https://healthy-food-1.onrender.com/api/orders/get").then((res) => {
       setOrderData(res.data.data);
     });
 
     // Fetch all users
-    axios.get("http://localhost:3000/api/user").then((res) => {
+    axios.get("https://healthy-food-1.onrender.com/api/user").then((res) => {
       setUserData(res.data);
     });
 
     // Fetch all products
-    axios.get("http://localhost:3000/api/").then((res) => {
+    axios.get("https://healthy-food-1.onrender.com/api/").then((res) => {
       setTotalProducts(res.data);
     });
   }, []);
