@@ -10,7 +10,7 @@ export const ProductDetailsPopup = ({ isOpen, onClose, id }) => {
   // Fetch product details
   useEffect(() => {
     if (isOpen && id) {
-      Axios.get(`http://localhost:3000/api/${id}`)
+      Axios.get(`https://healthy-food-1.onrender.com/api/${id}`)
         .then((response) => {
           setProduct(response.data);
         })
@@ -20,7 +20,7 @@ export const ProductDetailsPopup = ({ isOpen, onClose, id }) => {
         });
 
       // Fetch reviews for the product
-      Axios.get(`http://localhost:3000/api/reviews/${id}`)
+      Axios.get(`https://healthy-food-1.onrender.com/api/reviews/${id}`)
         .then((response) => {
           setReviews(response.data);
         })
@@ -36,7 +36,7 @@ export const ProductDetailsPopup = ({ isOpen, onClose, id }) => {
     if (newReview.comment.trim()) {
       const user=localStorage.getItem("user")
       console.log(user)
-      Axios.post(`http://localhost:3000/api/reviews/${id}`, newReview,{ withCredentials: true })
+      Axios.post(`https://healthy-food-1.onrender.com/api/reviews/${id}`, newReview,{ withCredentials: true })
         .then((response) => {
           setReviews((prev) => [...prev, response.data]);
           setNewReview({ rating: 5, comment: "" });
