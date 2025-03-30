@@ -7,7 +7,7 @@ const ProductManagement = () => {
   useEffect(() => {
     // Fetch all products from the backend
     axios
-      .get("http://localhost:3000/api/")
+      .get("https://healthy-food-1.onrender.com/api/")
       .then((res) => {
         setProducts(res.data);
       })
@@ -19,7 +19,7 @@ const ProductManagement = () => {
 
   const toggleAvailability = async (productId, currentStatus) => {
     try {
-      await axios.post(`http://localhost:3000/api/${productId}`, {
+      await axios.post(`https://healthy-food-1.onrender.com/api/${productId}`, {
         isAvailable: !currentStatus,
       });
       setProducts((prevProducts) =>
@@ -38,7 +38,7 @@ const ProductManagement = () => {
 
   const deleteProduct = async (productId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/${productId}`);
+      await axios.delete(`https://healthy-food-1.onrender.com/api/${productId}`);
       setProducts((prevProducts) =>
         prevProducts.filter((product) => product._id !== productId)
       );
