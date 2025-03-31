@@ -11,7 +11,7 @@ const CheckoutPage = () => {
 },[]);
     
       const handleCart = () => {
-        Axios.get("http://localhost:3000/api/cart", { withCredentials: true })
+        Axios.get("https://healthy-food-1.onrender.com/api/cart", { withCredentials: true })
           .then((response) => {
             console.log(response.data);
             setCartItems(response.data.items);
@@ -40,7 +40,7 @@ const CheckoutPage = () => {
     setLoading(true);
     toast.info("Placing your order...");
 
-    Axios.post("http://localhost:3000/api/orders/order", {items: cartItems},{withCredentials:true})
+    Axios.post("https://healthy-food-1.onrender.com/api/orders/order", {items: cartItems},{withCredentials:true})
       .then((response) => {
         toast.success("Order placed successfully!");
       })
